@@ -1,0 +1,236 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+    input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+/* Global  */
+:root{
+
+--Blue: hsl(223, 87%, 63%);
+--Pale-Blue: hsl(223, 100%, 88%);
+--Light-Red: hsl(354, 100%, 66%);
+--Gray: hsl(0, 0%, 59%);
+--Very-Dark-Blue: hsl(209, 33%, 12%);
+
+}
+
+body{
+
+  font-family: "Libre Franklin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100 900;
+  font-style: normal;
+  font-size: 20px;
+
+}
+/* mobile */
+.wrappr{
+    /* border: 1px solid red; */
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    padding: 1rem 1rem;
+}
+.logo{
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.top-content{
+    text-align: center;
+    padding: 0.5rem;
+
+}
+h1{
+  font-size: 1.75rem;
+}
+h1 span{
+  color: var(--Gray);
+  font-weight: 450;
+
+}
+h2{
+  font-size: 1rem;
+  font-weight: 450;
+}
+.form{
+    display: flex;
+    place-content: center;
+    flex-direction: column;
+    /* padding: 0.5rem; */
+    /* border: 1px blue solid; */
+    gap: 0.75rem;
+    /* position: relative; */
+}
+.form input{
+    border: 1px solid var(--Blue) ;
+    /* display: block; */
+    width: 100%;
+    height: 3rem;
+    outline-color: var(--Blue);
+    border-radius: 100vw;
+    padding: 0 1.5rem ;
+
+}
+.form button{
+    /* display: block; */
+    width: 100%;
+    height: 3rem;
+ 
+    border-radius: 100vw;
+    border: none;
+    background-color: var(--Blue);
+    cursor: pointer;
+    color: white;
+}
+.error-msg{
+    display:inline-block;
+    color: var(--Light-Red);
+    font-style: italic;
+    text-align: center;
+    font-size: 0.75rem;
+   
+    padding-top: 0;
+    padding-left: 3%;
+}
+
+.content{
+  padding-top: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+.social{
+  display: flex;
+  place-content: center;
+  gap: 1rem;
+  
+  padding: 1rem;
+}
+
+.social span{
+
+  width: 40px;
+  height: 40px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 1px solid var(--Gray);
+
+}
+
+.social svg{
+  width: 65%;
+  height: 80%;
+  margin:  auto;
+
+
+}
+.social span:hover{
+  background-color: var(--Blue);
+}
+.copyright{
+  display: flex;
+  place-content: center;
+  font-size: 0.75rem;
+  padding: 1rem;
+}
+/* toggle error message */
+.off{
+  display: none;
+}
+/* Desktop */
+@media (min-width:600px) {
+    .logo{
+      padding: 2rem 0rem;
+      
+    }
+    h1{
+      font-size: 3rem;
+    }
+    h2{
+      font-size: 1.5rem;
+    }
+    .form{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border: none;
+      gap: 1rem;
+      position: relative;
+    }
+    .form input{
+      width: 70%;
+      /* padding: 1rem 0rem; */
+      height: 4rem;
+      padding: 0 3rem;
+    }
+    .form button{
+      width:30%;
+      height:4rem;
+    }
+    .error-msg{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      font-size: 1rem;
+    }
+    .social span{
+      width: 60px;
+      height: 60px;
+    }
+}
+
+
+
+
+.attribution { 
+    font-size: 14px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
